@@ -19,10 +19,11 @@ return computerMove;
 }
 
 function RPS(playerSelection,computerSelection){
-    if (playerSelection.toLowerCase !== "rock" || playerSelection.toLowerCase !== "paper" || playerSelection.toLowerCase !== "scissors"){
-        alert( "Invalid input")
+    console.log(playerSelection.toLowerCase());
+    if (playerSelection.toLowerCase() == "rock" || playerSelection.toLowerCase() == "paper" || playerSelection.toLowerCase() == "scissors"){
+        alert( "valid input")
     }
-    else alert("Valid input")
+    else alert("invalid input")
 }
 
-console.log(RPS(1,2))
+console.log(RPS("RoCk",2))

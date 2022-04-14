@@ -45,10 +45,21 @@ function RPS(playerSelection,computerSelection){
                 case "scissors":
                     alert("You chose paper, the Computer chose scissors. You lose!");
                     break;
-
             }
         }
-
+        else if (playerSelection == "scissors"){
+            switch (computerSelection){
+                case "rock":
+                    alert("You chose scissors, the Computer chose rock. You lose!");
+                    break;
+                case "paper":
+                    alert("You chose scissors, the Computer chose paper. You lose!");
+                    break;
+                case "scissors":
+                    alert("You chose scissors, the Computer chose scissors. You tie!");
+                    break;
+            }
+        }
         }
     else {
         alert("invalid input");

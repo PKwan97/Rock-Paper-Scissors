@@ -34,6 +34,21 @@ function RPS(playerSelection,computerSelection){
                     break;
             }
         }
+        else if (playerSelection == "paper"){
+            switch (computerSelection){
+                case "rock":
+                    alert("You chose paper, the Computer chose rock. You win!");
+                    break;
+                case "paper":
+                    alert("You chose paper, the Computer chose paper. You tie!");
+                    break;
+                case "scissors":
+                    alert("You chose paper, the Computer chose scissors. You lose!");
+                    break;
+
+            }
+        }
+
         }
     else {
         alert("invalid input");

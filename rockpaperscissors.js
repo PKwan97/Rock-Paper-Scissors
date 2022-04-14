@@ -19,11 +19,25 @@ return computerMove;
 }
 
 function RPS(playerSelection,computerSelection){
-    console.log(playerSelection.toLowerCase());
-    if (playerSelection.toLowerCase() == "rock" || playerSelection.toLowerCase() == "paper" || playerSelection.toLowerCase() == "scissors"){
-        alert( "valid input")
+    playerSelection = playerSelection.toLowerCase();
+    if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors"){
+        if (playerSelection == "rock"){
+            switch (computerSelection){
+                case "rock":
+                    alert("You chose rock, the Computer chose rock. You tie!");
+                    break;
+                case "paper":
+                    alert("You chose rock, the Computer chose paper. You lose!");
+                    break;
+                case "scissors":
+                    alert("You chose rock, the Computer chose scissors. You win!");
+                    break;
+            }
+        }
+        }
+    else {
+        alert("invalid input");
     }
-    else alert("invalid input")
 }
 
-console.log(RPS("RoCk",2))
+RPS("RoCk",computerPlay());

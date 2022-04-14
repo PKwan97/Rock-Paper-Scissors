@@ -1,6 +1,5 @@
 function computerPlay(){
 let numberGen = Math.floor(Math.random()*3);
-console.log(numberGen);
 let computerMove = '';
 
 if (numberGen == 0){
@@ -14,7 +13,6 @@ computerMove = "paper";
 else if (numberGen == 2){
 computerMove = "scissors";
 }
-console.log(computerMove);
 return computerMove;
 }
 
@@ -26,15 +24,15 @@ function playRound(playerSelection,computerSelection){
             switch (computerSelection){
                 case "rock":
                     alert("You chose rock, the Computer chose rock. You tie!");
-                    result = tie;
+                    result = "tie";
                     break;
                 case "paper":
                     alert("You chose rock, the Computer chose paper. You lose!");
-                    result = loss;
+                    result = "loss";
                     break;
                 case "scissors":
                     alert("You chose rock, the Computer chose scissors. You win!");
-                    result = win;
+                    result = "win";
                     break;
             }
         }
@@ -42,15 +40,15 @@ function playRound(playerSelection,computerSelection){
             switch (computerSelection){
                 case "rock":
                     alert("You chose paper, the Computer chose rock. You win!");
-                    result = win;
+                    result = "win";
                     break;
                 case "paper":
                     alert("You chose paper, the Computer chose paper. You tie!");
-                    result = tie;
+                    result = "tie";
                     break;
                 case "scissors":
                     alert("You chose paper, the Computer chose scissors. You lose!");
-                    result = loss;
+                    result = "loss";
                     break;
 
             }
@@ -59,15 +57,15 @@ function playRound(playerSelection,computerSelection){
             switch (computerSelection){
                 case "rock":
                     alert("You chose scissors, the Computer chose rock. You lose!");
-                    result = loss;
+                    result = "loss";
                     break;
                 case "paper":
                     alert("You chose scissors, the Computer chose paper. You win!");
-                    result = win;
+                    result = "win";
                     break;
                 case "scissors":
                     alert("You chose scissors, the Computer chose scissors. You tie!");
-                    result = tie;
+                    result = "tie";
                     break;
             }
         }
@@ -75,4 +73,35 @@ function playRound(playerSelection,computerSelection){
         alert("invalid input");
     }
     }
+    return result;
 }
+let Wins = 0;
+let Ties = 0;
+let Losses = 0;
+for (let i = 0; i<5; i++){
+    let playerSelection = prompt("Choose your move");
+    let Result = playRound(playerSelection,computerPlay());
+    if (Result == "win"){
+        Wins++;
+        }
+    else if (Result == "loss"){
+        Losses++;
+    }
+    else if (Result == "tie"){
+        Ties++;
+    }
+}
+console.log(Wins);
+console.log(Ties);
+console.log(Losses);
+if (Wins > Losses){
+    alert("You win!");
+}
+else if (Losses > Wins){
+    alert("You lose!");
+}
+else if (Wins == Losses){
+    alert("You tie!");
+}
+
+
